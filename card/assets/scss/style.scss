@@ -1,3 +1,5 @@
+$principal-color: #e74d41;
+
 body{
   margin: 0 auto;
 }
@@ -11,27 +13,54 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
 }
 
 .card{
   width: 350px;
   height: 450px;
   overflow: hidden;
+  position: relative;
     img{
       height: 320px;
       position: relative;
       left:-70px;
+      transition-duration: 1s;
     }
+    &:hover{
+        img{
+          transform: scale(1.5,1.5);
+          filter: brightness(1.4) contrast(0.6);
+        }
+      }
+    &:hover{
+        .text-area{
+          transform: translateY(-120px);
+        }
+      }
+}
+.shadow-box{
+      width: 350px;
+      height: 501px;
+      -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,0.75);
+      -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,0.75);
+      box-shadow: 2px 2px 2px -1px rgba(0,0,0,0.75);
+      transition-duration: 1s;
+        &:hover{
+          -webkit-box-shadow: 2px 2px 20px -1px rgba(0,0,0,0.75);
+          -moz-box-shadow: 2px 2px 20px -1px rgba(0,0,0,0.75);
+          box-shadow: 2px 2px 20px -1px rgba(0,0,0,0.75);
+        }
 }
 
 .date{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: red;
+  background: $principal-color;
   position: absolute;
-  top:220px;
-  left:1070px;
+  top: 10px;
+  right:10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +78,7 @@ body{
   margin-bottom: -30px;
     h3{
       display: inline;
-      background-color: red;
+      background-color: $principal-color;
       color: white;
       padding: 10px;
     }
@@ -60,17 +89,31 @@ body{
   background-color: white;
   width: 100%;
   height: 300px;
-  transition: 2s;
+  transition-duration: 1s;
+      h1{
+        padding-top: 15px;
+        padding-left:20px;
+        font-size: 30px;
+        font-weight: lighter;
+      }
       h2{
         margin-bottom: 50px;
+        color: $principal-color;
+        padding-left: 20px;
+        font-size: 18px;
       }
-      &:hover{
-        transform: translateY(-100px);
+      p{
+        padding-left: 20px;
+        padding-right: 20px;
       }
-
 
 }
 
 footer{
+  width: 350px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
 }
